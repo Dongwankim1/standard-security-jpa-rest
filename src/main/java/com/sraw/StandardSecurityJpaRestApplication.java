@@ -1,4 +1,4 @@
-package com.sraw.app;
+package com.sraw;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
