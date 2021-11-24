@@ -1,11 +1,23 @@
 package com.sraw.security.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.sraw.security.model.User;
+import com.sraw.security.service.UserService;
+	
+	
 
 @Controller
 public class IndexController {
+	
+	@Autowired
+	private UserService userservice;
+
 	
 	@GetMapping({"","/"})
 	public String index() {
@@ -27,21 +39,24 @@ public class IndexController {
 		return "manager";
 	}
 	
-	@GetMapping("/login")
-	public String login() {
+	@GetMapping("/joinForm")
+	public String joinForm() {
+		return "joinForm";
+	}
+	
+	@GetMapping("/loginForm")
+	public String loginForm() {
 		return "loginForm";
 	}
 	
-	@GetMapping("/join")
-	public @ResponseBody String join() {
-		return "join";
+	@PostMapping("/join")
+	public  String join( User user) throws Exception {
+		userservice.createUser(user);
+		
+		return "redirect:/loginForm";
 	}
 	
-	@GetMapping("/joinProc")
-	public @ResponseBody String joinProc() {
-		return "회원가입 완료됨!";
-	}
-	
+
 	
 	
 }
