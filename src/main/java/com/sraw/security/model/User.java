@@ -27,6 +27,7 @@ public class User {
 	private String email;
 	private String role;
 	private String password;
+	private Timestamp loginDate;
 	@CreationTimestamp
 	private Timestamp createDate;
 	public int getId() {
@@ -65,6 +66,14 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public Timestamp getLoginDate() {
+		return loginDate;
+	}
+	public void setLoginDate(Timestamp loginDate) {
+		this.loginDate = loginDate;
+	}
+	
+	
 	
 	
 }
