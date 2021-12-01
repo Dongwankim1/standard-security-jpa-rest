@@ -17,15 +17,12 @@ import com.sraw.security.config.oauth.PrincipalOauth2UserService;
 @EnableGlobalMethodSecurity(securedEnabled = true,prePostEnabled = true) //secured anotation 활성화 , preAuthorize 어노테이션 활성화
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
+
+	
+	
+	
 	@Autowired
 	private PrincipalOauth2UserService principalOauth2UserService;
-	
-	
-	//해당 메서드의 리턴되는 오브젝트를 IoC로 등록해준다.
-	@Bean
-	public BCryptPasswordEncoder encodePwd() {
-		return new BCryptPasswordEncoder();
-	}
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {

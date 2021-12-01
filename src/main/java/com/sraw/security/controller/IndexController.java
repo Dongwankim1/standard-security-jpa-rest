@@ -1,5 +1,7 @@
 package com.sraw.security.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -54,7 +56,9 @@ public class IndexController {
 	}
 	
 	@GetMapping("/user")
-	public @ResponseBody String user() {
+	public @ResponseBody String user(@AuthenticationPrincipal PrincipalDetails principalDetails) {
+		System.out.println("principalDetails: "+principalDetails.getUser());
+		System.out.println("principalDetails1: "+principalDetails.getUser().getId());
 		return "user";
 	}
 	

@@ -11,6 +11,7 @@ import javax.persistence.Id;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,6 +21,20 @@ import lombok.Setter;
 @Setter
 @Data
 public class User {
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public User(String username, String email, String role, String password,
+			Timestamp createDate, String provider, String providerId) {
+		this.username = username;
+		this.email = email;
+		this.role = role;
+		this.password = password;
+		this.createDate = createDate;
+		this.provider = provider;
+		this.providerId = providerId;
+	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

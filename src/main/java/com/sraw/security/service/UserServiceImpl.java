@@ -12,10 +12,11 @@ import com.sraw.security.repository.UserRepository;
 public class UserServiceImpl implements UserService {
 	
 	@Autowired
-	private UserRepository userRepository;
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	@Autowired
-	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	private UserRepository userRepository;
+	
 	
 	@Override
 	public void createUser(User user) throws Exception{
