@@ -30,6 +30,11 @@ public class User {
 	private Timestamp loginDate;
 	@CreationTimestamp
 	private Timestamp createDate;
+	
+	
+	private String provider;
+	private String providerId;
+	
 	public int getId() {
 		return id;
 	}
@@ -71,6 +76,18 @@ public class User {
 	}
 	public void setLoginDate(Timestamp loginDate) {
 		this.loginDate = loginDate;
+	}
+	public String getProvider() {
+		return provider;
+	}
+	public void setProvider(String provider) {
+		this.provider = provider;
+	}
+	public String getProviderId() {
+		return providerId;
+	}
+	public void setProviderId(String providerId) {
+		this.providerId = providerId;
 	}
 	
 	
