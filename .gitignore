@@ -3,7 +3,11 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+<<<<<<< HEAD
 src/**/application.yml
+=======
+**/src/main/**/application.yml
+>>>>>>> 4534ae5fcf07d2339e0fcd7e2a00251ecc6747ce
 ### STS ###
 .apt_generated
 .classpath
